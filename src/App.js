@@ -8,7 +8,7 @@ import Elegible from './components/Elegible';
 
 function App() {
   const nombre1 = "Manué";
-  const edad1 = 25;
+  const edad1 = 26;
   const arrayLista = [
     {
       nombre: "Mark Dwain",
