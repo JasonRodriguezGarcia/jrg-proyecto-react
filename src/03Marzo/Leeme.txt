@@ -1,0 +1,16 @@
+Para crear un nuevo proyecto React se creará la estructura mínima con sus ficheros y directorios:
+
+npx create-react-app jrg-proyecto-react
+
+(Esto es opcional: Podemos primeramente crear el proyecto en un directorio temporal y luego moverlo al directorio 
+oportuno para poder hacer usar git)
+
+Arrancamos el proyecto creado con 
+
+npm start
+
+"npm start" llamará a index.html (html principal), el cual a su vez llamará al COMPONENTE App.js (abrir para ver), 
+el cual llamará a NUESTROS COMPONENTES importados en App.js. Dichos COMPONENTES creados están guardados en src/components.
+
+Iré guardando en distintas fechas los directorios y componentes creados para que luego se copien en /src MACHACANDO LO QUE 
+CONTENGAN, así se tendrá lo del día de la fecha copiada.
