@@ -1,86 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
-import Bienvenido from './components/Bienvenido/Bienvenido';
-import ProfileCard from './components/Bienvenido/ProfileCard';
-import ContarClicks from './components/ContarClicks'
-import Input from './components/Input';
-import Elegible from './components/Elegible';
+import {Route, Routes } from "react-router-dom";
+import Home from './pages/Home';
+import About from './pages/About';
+import Navbar from './components/Navbar/Navbar';
+import Contact from './pages/Contact';
+import Coche from './pages/Coche'
+import Usuario from './pages/Usuario';
+import Usuarios from './pages/Usuarios';
 
 function App() {
-  const nombre1 = "Manué";
-  const edad1 = 26;
-  const arrayLista = [
-    {
-      nombre: "Mark Dwain",
-      edad: 42,
-      bio: "Entusiasta de la tecnología con más de 20 años de experiencia en la industria. Le encanta hacer senderismo.",
-      profileImage: "https://picsum.photos/200/300?random=2"
-    }, 
-    {
-      nombre: "Pepe er Quillo",
-      edad: 38,
-      bio: "Er butanero que va de aquí para allá tira que tira para ver si llega a final de mes, que la cosa está mú achuchá ",
-      profileImage: "https://picsum.photos/200/300?random=3"
 
-    },
-    {
-      nombre: "Pepe er Quillo",
-      edad: 38,
-      bio: "Er butanero que va de aquí para allá tira que tira para ver si llega a final de mes, que la cosa está mú achuchá ",
-      profileImage: "https://picsum.photos/200/300?random=4"
-
-    }
-  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <Elegible />
-        <Input />
-        <ContarClicks />
+    <>
+      <Navbar />
 
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
+        {/* ruta dinámica añadiendo un parámetro
+        /coches/100
+        /coches/2
+        /coches/ford
+        */}
+        <Route path="/coche/:id" element={<Coche />}></Route>
+        <Route path="/usuarios" element={<Usuarios />}></Route>
+        <Route path="/usuario/:id" element={<Usuario />}></Route>
 
-        {/* <Bienvenido nombre = "🤔🤔Tio camuñas ...🙂🙂" edad ={33} /> */}
-        <Bienvenido nombre = {nombre1} edad ={edad1} />
-
-
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {/* Edit <code>src/App.js</code> and save to reload. */}
-        </p>
-        <h1>IÑIGOrrrr...!!!</h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React Iñigo!!
-        </a>
-      </header>
-      {arrayLista.map((elemento, index) =>
-        <ProfileCard key={index}
-        nombre={elemento.nombre}
-        edad={elemento.edad}
-        bio={elemento.bio}
-        profileImage={elemento.profileImage}
-    />
-
-      )}
-
-      {/* <ProfileCard 
-          nombre="Pepe er Quillo"
-          edad={38}
-          bio="Er butanero que va de aquí para allá tira que tira para ver si llega a final de mes, que la cosa está mú achuchá "
-          profileImage="https://picsum.photos/200/300?random=3"
-      />
-      <ProfileCard 
-          nombre="Pepe er Quillo"
-          edad={38}
-          bio="Er butanero que va de aquí para allá tira que tira para ver si llega a final de mes, que la cosa está mú achuchá "
-          profileImage="https://picsum.photos/200/300?random=4"
-      /> */}
-    </div>
+      </Routes>
+    </>
   );
+  
 }
 
 export default App;
