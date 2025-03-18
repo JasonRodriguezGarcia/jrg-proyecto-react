@@ -1,0 +1,59 @@
+Para empezar ... para poder usar rutas en React hay que instalar la librería react-router-dom
+
+npm install reac-router-dom
+
+Además tendremos que añadir al index.js el import oportuno
+
+import { BrowserRouter } from "react-router-dom";
+
+Y tambien envolver el componente <App /> con BrowserRouter en dicho index.js
+
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+
+/components/Condicional.jsx su App.js correspondiente sería "App Login Condiciona..js"
+Ejercicio en el que se usa varias formar de poner condicionales y así ejecutar código a conveniencia.
+Cambiando las variables x, y, usuario se aplicará un distinto resultado a mostrar.
+Cambiando usuario se mostrará un texto u otro
+Cambiando x se podrá usar el boton o no
+
+/components/Login/Login.jsx y Login copy.jsx
+Ejercicio en el que se usan los datos usuario y contraseña de un formulario para hacer una comparativa con un array
+de usuarios para ver si su contraseña es correcta o no y mostrar un mensaje acorde al resultado. "Login copy.jsx" es la 
+versión inicial más sencilla.
+
+/pages, /components/Navbar/Navbar.jsx
+Navbar.jsx
+Es un componente usado en App.jsx junto con las rutas creadas y añade una barra de navegador en la parte de arriba al
+mostrarse la página web.
+App.js contiene todas las rutas (para poner en la barra del navegador) a usar en este ejercicio así como sus 
+componentes al usarlas, que esta vez al ser componentes que tienen ruta se guardan en /pages.
+Para poder usar rutas a parte de los cambios al inicio indicados en index.jsx, hay que importar en App.jsx:
+    import {Route, Routes } from "react-router-dom";
+Y en App.jsx hay una estructura como:
+    <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        ....
+        <Route path="/usuario/:id" element={<Usuario />}></Route>
+    </Routes>
+
+
+Son rutas estáticas:
+    /
+    /about
+    /contact
+    /usuarios
+Son rutas dinámicas:
+    /coche/:id  --> su componente es Coche.jsx 
+        Para poder usar esta ruta como dinámica hay que importar "import { useParams } from 'react-router-dom';" 
+        en su componente Coche.jsx y así mediante deconstrución "const {id} = useParams()" capturamos su parámetro ":id"
+        La ruta se usa como "/coche/1"
+    /usuario/:id
+        Al usar /usuarios se muestra un array de objetos mediante un map una UL en el que cada LI contiene un texto 
+        "Nombre: " y su objeto "usuario.nombre", el cual está envuelto en un "Link" que apunta a la página 
+        /usuario/${usuario.id} que abrirá dicha página dinámica a la que se ha pasado un parámetro "usuario.id". 
+        La página /usuario/{usuario.id} se abrirá y usará dicha "id" internamente para mostrar el "id" de su array para 
+        poder hacer este uso del "id" que le pasan tendrá en su inicio "import { useParams } from 'react-router-dom';"
+

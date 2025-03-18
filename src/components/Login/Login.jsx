@@ -31,12 +31,13 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-debugger
+    // La función find devuelve un objeto completo o undefined si no lo encuentra
+    const encontrado = usuarios.find((usuario)=>
+        usuario.nombre === event.target.usuario.value
+    )
+    debugger
     // Comprobar usuario y password
-    if (event.target.password.value == usuarios.find((usuario)=>{
-        if(usuario.nombre === event.target.usuario.value)
-            return (usuario.password)
-    })) {
+    if (encontrado && event.target.password.value == encontrado.password) {
 
         //     // Se es correcto, cambiar el estado de loggedIn a true
         setLoggedIn (true)

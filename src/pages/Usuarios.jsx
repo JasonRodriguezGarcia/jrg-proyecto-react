@@ -8,6 +8,7 @@ const usuarios = [
   { id: 1, nombre: 'Juan Pérez', edad: 28 },
   { id: 2, nombre: 'Ana García', edad: 34 },
   { id: 3, nombre: 'Carlos López', edad: 22 },
+  { id: 4, nombre: 'Perico el de los Palotes', edad: 30 },
 ];
 
 const Usuarios = () => {
@@ -18,7 +19,7 @@ const Usuarios = () => {
                 {usuarios.map((usuario, key) => {
                     return (
                         <li key={key} onClick={()=>console.log("test")}>
-                            <Link to={`/usuario/${usuario.id}`}>Nombre: {usuario.nombre}</Link>
+                            Nombre: <Link to={`/usuario/${usuario.id}`}>{usuario.nombre}</Link>
                         </li>
                     )
                 })}
