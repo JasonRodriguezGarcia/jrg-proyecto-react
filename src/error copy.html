@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Gestión Errores</h1>
+    <script>
+
+        
+        // queremos capturar un error para que el progama no se pare
+        
+        try { // hacemos un "intento"
+        // provocamos un error
+        console.log(x)
+
+        }
+        catch (e) { // se quenera un evento "e"
+            console.log("Se ha producido un error")
+            console.log(e)
+            console.log(e.message)
+            console.log(e.name)
+            // console.log(e.stack)
+        }
+        finally {
+            console.log("Va a ejecutarse sí o sí al final")
+        }
+    </script>
+</body>
+</html>

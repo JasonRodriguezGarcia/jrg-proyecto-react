@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+
+    function fetchData(callback) {
+        setTimeout(() => {
+        console.log("Fetching data...");
+        callback(null, "Data loaded");  // error, data
+        // callback(1, "Data loaded");  // simulando error 1, data
+        }, 1000);
+    }
+
+    function mostrarData(callback) {
+        setTimeout(() => {
+        console.log("Mostrar data...");
+        callback(null, "Datos mostrados");
+        // callback(1, "Datos mostrados");
+        }, 2000);
+    }
+    function terminarData(callback) {
+        setTimeout(() => {
+        console.log("Terminar data...");
+        callback(null, "Terminar data");
+        // callback(1, "Datos mostrados");
+        }, 2000);
+    }
+
+    // EJEMPLO CALLBACK HELL, EJECUTAR UNA COSA DETRÁS DE OTRA
+    function main() {
+        fetchData((error, data) => {
+            if (error) {
+                console.error("Error:", error);
+
+            } else {
+                console.log("Success:", data);
+                mostrarData((error, data) => {
+                    if (error) {
+                        console.log("Error en mostrar")
+                    } else {
+                        console.log("Success", data)
+                        terminarData((error,data) => {
+                            if (error) {
+                                console.log("Error en terminar")
+                            } else {
+                                console.log("Success terminado")
+                            }
+                        })
+                    }
+                }) 
+            }
+        });
+    }
+
+
+    main();
+
+
+  
+
+    </script>
+</body>
+</html>
