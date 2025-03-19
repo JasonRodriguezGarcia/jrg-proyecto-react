@@ -5,13 +5,13 @@ const FetchActividad = ()=>{
 
     const [usuario, setUsuario] = useState({})
     const [codigoUsuario, setCodigoUsuario] = useState(0)
+    const [isUserDetails, setUserDetails] = useState(false)
     const [posts, setPosts] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoaded, setIsLoaded] = useState(false)
     // const []
 
     const handleSubmit= (e) => {
         e.preventDefault()
-        setIsLoading(true)
 
         fetch(`https://jsonplaceholder.typicode.com/users/${codigoUsuario}`)
         .then(response=>{
@@ -27,17 +27,19 @@ const FetchActividad = ()=>{
             console.log(data);
             console.log(data.name);
             setUsuario(data)
+            setUserDetails(true)
         })
         .catch(error => {
             console.log(error);
         })
         .finally(()=>{
             console.log('finally');
-
+            
         })
     }
-
+    
     const getPosts = () => {
+        setIsLoaded(true)
         setTimeout(() => {
             
             fetch(`https://jsonplaceholder.typicode.com/posts?userId=${codigoUsuario}`)
@@ -60,10 +62,14 @@ const FetchActividad = ()=>{
             })
             .finally(()=>{
                 console.log('finally');
-                setIsLoading(false)
+                setIsLoaded(false)
             })
-        }, 2);
-        }
+        }, 2000);
+    }
+
+    const clearData = () => {
+        window.location.reload(true)
+    }
         
         return (
             <>
@@ -77,11 +83,16 @@ const FetchActividad = ()=>{
             </form>
             <h2>Detalles del Usuario</h2>
             {/* TO DO: Mostrar los detalles del usuario seleccionado */}
-            <p>id: {codigoUsuario}</p>
-            <p>nombre: {usuario.name}</p>
-            {/* <p>edad: {usuario.edad}</p> */}
-            {isLoading & <i class="fa-solid fa-spinner"></i>}
-            <button onClick={getPosts}>Conseguir Posts</button>
+            {isUserDetails &&
+                <>
+                    <p>id: {codigoUsuario}</p>
+                    <p>nombre: {usuario.name}</p>
+                </>
+            }
+
+            {isLoaded && <p>... loading data posts ...</p>}
+            <button onClick={getPosts}>Conseguir Posts</button><br />
+            <button onClick={clearData}>Limpiar datos</button>
             <ul>
                 {posts.map((post, index) => (
                     <li key={index}>
