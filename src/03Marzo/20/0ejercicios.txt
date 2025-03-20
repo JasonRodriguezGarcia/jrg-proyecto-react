@@ -1,0 +1,51 @@
+/components
+    /Navbar
+        Ejercicio de rutas copiado de uno del día 14Marzo ya realizado
+    Ejemplo1UseEffect.jsx
+        Ejercicio de uso de useEffect al principio de nuestro componente, en el que se ven distintos resultados 
+        si descomentamos dicho useEffect
+    Ejemplo1UseEffect2.jsx
+        Ejercicio de uso de useEffect al principio de nuestro componente, en el que useEffect esta vez depende de
+        la variable bgColor. El cambio del valor de dicha variable hace saltar el useEffect.
+    Buscador2.jsx
+        Componente que hace uso del queryString para usar mediante "navigate" la ruta /buscar (ruta ya añadida en Apps.jsx 
+        que apunta al componente BuscadorResultadoPage) 
+        a la que añade lo siguiente: 
+            navigate(`/buscar?q=${encodeURIComponent(query)}`);
+        El ejercicio al meter un texto ("Peugeot") de búsqueda desde el input, usa dicho "navigate" que hace una petición GET a:
+            /buscar?q=Peugeot
+        Que es usada en BuscadorResultadoPage2.jsx
+    Buscador.jsx
+        Ejercicio siguiente a Buscador2.jsx y más avanzado. En él se usan 2 textos de 2 input para hacer una petición más
+        avanzada con 2 parámetros:
+            /buscar?titulo=El%20Quijote%20de%20La%20Mancha&autor=Cervantes
+        Los 2 parámetros en este caso son "titulo" y "autor" que son generados por:
+            navigate(`/buscar?titulo=${encodeURIComponent(titulo)}&`+
+                `autor=${encodeURIComponent(autor)}`); 
+        El ejercicio al meter 2 textos ("El Quijote de La Mancha" y "Cervantes) de búsqueda desde los input, usa el "navigate"
+        que hace una petición GET a:
+            /buscar?titulo=El%20Quijote%20de%20La%20Mancha&autor=Cervantes
+        Que es usada en BuscadorResultadoPage.jsx
+/pages
+    BuscadorResultadoPage2.jsx
+        Usa "useSearchParams" para conseguir del navegador el queryString (que en este caso es /buscar?q=Peugeot). Luego
+        usa el "searchParams" para conseguir el parámetro "q" que contiene "Peugeot" y lo guarda en la variable "query",
+        que es usada en el filtro con un "include" para conseguir un resultado o resultados, que luego en el cuerpo del
+        html del return es presentado con un "map" que en el caso de que hay resultados los imprime.
+    BuscadorResultadoPage.jsx  
+        Usa "useSearchParams" para conseguir del navegador el queryString (que en este caso es 
+        /buscar?titulo=El%20Quijote%20de%20La%20Mancha&autor=Cervantes). Luego usa el "searchParams" para conseguir los
+        parámetros "titulo" y "autor" que son usados en el filtro con un "include" para conseguir un resultado o resultados, 
+        que luego en el cuerpo del html del return es presentado con un "map" que en el caso de que hay resultados los imprime.
+    Home.jsx, About.jsx y contact.jsx son de un ejercicio del día 14Marzo.
+/utils
+    ProtectedRoute.jsx
+        Es un componente llamado desde la ruta /dashboard (ruta ya añadida en Apps.jsx que apunta al componente
+        ProtectedRoute.jsx) al que pasa 2 props "element={<Dashboard />} isAuthenticated={false}" que son usados 
+        dentro de ProtectedRoute mediante un operador ternario para que si isAuthenticated es "true", se irá al componente
+        "element" que apunta a "Dashboard" (según su prop) o sino irá a "/" 
+    ProtectedRouteAdmin.jsx
+        Es un componente llamado desde la ruta /admin (ruta ya añadida en Apps.jsx que apunta al componente
+        ProtectedRouteAdmin.jsx) al que pasa 2 props "element={<Admin />} isAuthenticated={false}" que son usados 
+        dentro de ProtectedRoute mediante un operador ternario para que si isAuthenticated es "true", se irá al componente
+        "element" que apunta a "Admin" (según su prop) o sino irá a "/"
