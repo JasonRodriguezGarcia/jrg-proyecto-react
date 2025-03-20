@@ -1,21 +1,17 @@
 import './App.css';
 import {Route, Routes } from "react-router-dom";
-// import AdivinaFruta from './components/AdivinaFruta';
-// import Efecto1 from './components/Efecto1';
-// import TituloDinamico from './components/TituloDinamico';
-import MovingObjectGame from './components/MovingObjectGame';
+import ErrorComponent from './components/ErrorComponent';
+import FetchActividad from './components/FetchActividad';
+
 
 function App() {
   return (
 
     <>
 
-      <MovingObjectGame />
-      {/* <Efecto1 />
-      <TituloDinamico /> */}
-
-      {/* <AdivinaFruta frutaSecreta ="manzana"/> */}
-      {/* <AdivinaFruta /> */}
+      <FetchActividad />
+      
+      {/* <ErrorComponent /> */}
 
       {/* <Navbar />
 
