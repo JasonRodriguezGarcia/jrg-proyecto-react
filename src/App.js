@@ -7,20 +7,18 @@ import Contact from './pages/Contact';
 import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './utils/ProtectedRoute';
 import ProtectedRouteAdmin from './utils/ProtectedRouteAdmin';
-import Admin from './utils/Admin';
-import BuscadorResultadoPage from './pages/BuscadorResultadoPage';
-import Ejemplo1UseEffect from './components/Ejemplo1UseEffect';
-import Ejemplo2UseEffect from './components/Ejemplo2UseEffect';
+import Admin from './pages/Admin';
+import Calculadora from './components/Calculadora';
 
 function App() {
   return (
 
     <>
-
-      <SpreadDemo />
+      {/* <SpreadDemo /> */}
       
       <Navbar />
 
+      
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
@@ -41,6 +39,8 @@ function App() {
          {/* <Route path="/buscar" element={<BuscadorResultadoPage />} /> */}
 
       </Routes>
+      
+      <Calculadora />
     </>
   );
   
