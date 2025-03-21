@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Buscador from '../components/Buscador';
-
-const Home = ()=> {
+import logo from "../../src/assets/logo192.png" // Esto es lo recomendado ya que cogiendo de aqui es más optimizado
+const Contact = ()=> {
 
     return (
         <>
-            <h1>Jom peich</h1>
+            <h1>Contact peich</h1>
 
-
+            <img src={logo} alt="logo" />
+            {/* <img src={logo2} alt="logo2" /> */}
+            <br />
             {/*  como si fuera un <a href="http:// ..." */}
             <Link to="/about">- Ir p'al abaut ... -</Link><br />
 
@@ -18,4 +19,4 @@ const Home = ()=> {
     )
 }
 
-export default Home;
+export default Contact;

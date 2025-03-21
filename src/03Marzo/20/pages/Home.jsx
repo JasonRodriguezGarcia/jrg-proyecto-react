@@ -8,6 +8,7 @@ const Home = ()=> {
         <>
             <h1>Jom peich</h1>
 
+            <Buscador />
 
             {/*  como si fuera un <a href="http:// ..." */}
             <Link to="/about">- Ir p'al abaut ... -</Link><br />

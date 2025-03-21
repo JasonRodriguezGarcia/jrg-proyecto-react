@@ -8,16 +8,18 @@ import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './utils/ProtectedRoute';
 import ProtectedRouteAdmin from './utils/ProtectedRouteAdmin';
 import Admin from './utils/Admin';
-import SpreadDemo from './components/SpreadDemo';
-
+import BuscadorResultadoPage from './pages/BuscadorResultadoPage';
+import Ejemplo1UseEffect from './components/Ejemplo1UseEffect';
+import Ejemplo2UseEffect from './components/Ejemplo2UseEffect';
 
 function App() {
   return (
 
     <>
 
-      <SpreadDemo />
-      
+    {/* <Ejemplo1UseEffect /> */}
+    {/* <Ejemplo2UseEffect /> */}
+
       <Navbar />
 
       <Routes>
@@ -37,7 +39,7 @@ function App() {
           path="/admin"
           element={<ProtectedRouteAdmin element={<Admin />} isAuthenticated={false}/>}
         />
-         {/* <Route path="/buscar" element={<BuscadorResultadoPage />} /> */}
+         <Route path="/buscar" element={<BuscadorResultadoPage />} />
 
       </Routes>
     </>
