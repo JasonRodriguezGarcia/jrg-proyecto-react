@@ -1,0 +1,22 @@
+/componentes
+
+AdivinaFruta.jsx
+Ejercicio en el que un array es consultada con el input esta vez dentro de un formulario en el que al pulsar un botón 
+se ejecuta ejecuta un onSubmit del formulario (acción por defecto de un botón dentro de un formulario) ejecutando la 
+función oportuna que actualiza intentos así como revisar si se ha acertado el valor del propr que se pasa a este componente 
+con la variable frutaSecreta. En caso o no de acierto el mensaje a mostrar es uno u otro. También tiene en cuenta los
+intentos, ya que si se llega a 3 intentos se termina el juego desactivando el boton ADIVINAR.
+Tambíen tiene un intento incompleto de cambio de código para escoger una fruta aleatoria.
+
+Efecto1.jsx
+Ejercicio en el que se ve el uso de useEffect para ver cómo se ejecuta o no un código de llamada a una api con fetch.
+En este caso depende de 2 valores que en el caso de cambiar 1 de ellos se activa useEffect y ejecuta su código.
+
+MovingObjectGame.jsx
+Otro ejemplo de useEffect, que depende de la variable "score" que cambia de valor al hacer click en el div "moving-object",
+activando useEffect
+
+TituloDinamico.jsx
+Otro ejemplo de useEffect, que depende de la variable "titulo" que cambia de valor cada vez que se escribe en el input,
+activando useEffect
+

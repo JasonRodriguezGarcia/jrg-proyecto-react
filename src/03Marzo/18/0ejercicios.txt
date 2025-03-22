@@ -1,1 +1,22 @@
-pending terminar
+Callback.html
+Ejemplo de llamadas en callback en el que se ve que enlazar varios callback hace el código más engorro y difícil de entender.
+Por eso es mejor realizar el proceso con "promesas"
+
+error copy.html
+Ejercicio de uso de promesas en el que provocamos un error al hacer un console.log con una variable "x" que no está definida, 
+pero controlamos ese error con un try-catch, que hace que "intentemos" hacer una acción "try" con el console.log que al dar 
+error, hace que este evento de error (e), se "canalice" por el "catch" en el que imprimimos varios mensajes. "Finalmente" con 
+"finally" haya o no un error se ejecute otro código final.
+
+error.html
+Ejercicio un tanto raro en el que tratamos de canalizar otro error.
+
+FetchDemo.html
+Ejercicio de uso de promesas a la hora de llamar a una API externa. En el que obtenemos una respuesta "response" que devuelve
+un .json, que se lo pasa a la variable "data" que devuelve un data.name que se lo pasa a la variable "nombre". En caso de error
+devuelve una variable "error". Finalmente haya o no error, ejecuta un console log.
+
+COMPONENTES PENDING ....
+
+
+

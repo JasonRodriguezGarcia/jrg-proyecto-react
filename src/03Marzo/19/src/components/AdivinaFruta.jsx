@@ -8,7 +8,7 @@ const AdivinaFruta = ({ frutaSecreta }  ) => {
     const [intentos, setIntentos] = useState(0);
     const [botonDis, setBotonDis] = useState(false)
 
-    // pending usar este código para fruta secreta aleatoria
+    ////// pending usar este código para fruta secreta aleatoria
     const arrFrutas = [
         "manzana",
         "fresa",
@@ -47,7 +47,6 @@ const AdivinaFruta = ({ frutaSecreta }  ) => {
                 {/* <button onClick={handleAdivina} disabled={botonDis}>Adivinar</button> */}
                 <button>Resetear</button>
             </form>
-            {/* { mensaje.length>0 ? mensaje: ""} */}
             { mensaje && <p>{mensaje}</p>}
             <p>Intentos: {intentos}</p>
         </>
