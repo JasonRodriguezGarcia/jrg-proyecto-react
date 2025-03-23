@@ -12,11 +12,25 @@ error.html
 Ejercicio un tanto raro en el que tratamos de canalizar otro error.
 
 FetchDemo.html
-Ejercicio de uso de promesas a la hora de llamar a una API externa. En el que obtenemos una respuesta "response" que devuelve
-un .json, que se lo pasa a la variable "data" que devuelve un data.name que se lo pasa a la variable "nombre". En caso de error
-devuelve una variable "error". Finalmente haya o no error, ejecuta un console log.
+Ejercicio de uso de promesas a la hora de llamar a una API externa. Hay un input que al introducir el código "1" y pulsar en 
+"Get user" se llama a la API https://jsonplaceholder.typicode.com/users/1 del que obtenemos una promesa con la respuesta "response"
+que si todo a ido bien (respuesta.ok = true) retorna la respuesta en json() que es recibida por la siguiente promesa con la  variable "data"
+cuyo data.name es envuelta en un <p> y metida en el innerHTML de un elemento <div> creado al vuelo y añadido al body imprimiendo 
+todo.
 
-COMPONENTES PENDING ....
+/components
+ErrorComponent.jsx
+Ejercicio en el que introducimos 2 números en un formulario y al pulsar el botón "Simulate error" ejecuta una función que hace un 
+try "intento" de dividir num1 y num2 dejando el que resultado en "result", que en el caso de ser "Infinite" por lo tanto 
+"NoFinite" (osea dividido por 0 que es  infinito) lanza "throw" un error que hace saltar el "catch" ejecutándose su código.
 
-
-
+FetchActividad.jsx
+Ejercicio que usa la web https://jsonplaceholder.typicode.com que tiene a disposición una API de prueba que permite manejar:
+https://jsonplaceholder.typicode.com/users/Nº   - datos del usuario Nº
+https://jsonplaceholder.typicode.com/posts?userId=Nº    - posts de usuario Nº
+El acceso a dicho API es a través de 2 fetch que son usados. El primero cuando metemos un código de usuario "1" en el input y pulsamos
+"Buscar" que hace un fetch a https://jsonplaceholder.typicode.com/users/1 obteniendo una promesa con resultados que primeramente son
+recibidos en "response" en el que revisamos si todo a ido bien los pasamos a json que son retornados y recibidos en la siguiente
+promesa en "data", donde su código guarda los datos en el estado "usuario" y userDetails se pone a "true" activando los párrafos donde se imprimen 
+"codigoUsuario" y usuario.name, también los botones para "Conseguir posts" y "Limpiar datos", que al pinchar en "Conseguir posts" 
+hace otro fetch a https://jsonplaceholder.typicode.com/posts?userId=1 el cual consigue los posts del usuario "1".

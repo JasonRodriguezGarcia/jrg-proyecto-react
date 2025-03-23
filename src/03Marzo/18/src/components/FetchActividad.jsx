@@ -87,12 +87,12 @@ const FetchActividad = ()=>{
                 <>
                     <p>id: {codigoUsuario}</p>
                     <p>nombre: {usuario.name}</p>
+                    <button onClick={getPosts}>Conseguir Posts</button><br />
+                    <button onClick={clearData}>Limpiar datos</button>
                 </>
             }
 
             {isLoaded && <p>... loading data posts ...</p>}
-            <button onClick={getPosts}>Conseguir Posts</button><br />
-            <button onClick={clearData}>Limpiar datos</button>
             <ul>
                 {posts.map((post, index) => (
                     <li key={index}>
