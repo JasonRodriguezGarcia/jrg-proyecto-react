@@ -1,0 +1,84 @@
+Arquitectura web
+Los servidores web son programas que está diseñados para transmitir la información a partir de la implantación de un protocolo http. Protocolo que es utilizado en todas las transacciones de datos web.
+
+Una aplicacion web es proporcionada por un servidor web y utilizada por usuarios que se conectan desde cualquier punto via clientes web (navegadores)
+
+El cliente no tiene acceso a los recursos del servidor de forma directa.
+
+Modelo de 3 capas
+Es la separación de las partes que compone un arquitectura cliente-servidor:
+1- Presentación (navegación web)
+	- Interpreta peticiones de usuarios
+	- Presenta los resultados
+	- Limitada y dirigida por la aplicación web
+2- Lógica de negocios
+	- Controla la presentación
+	- Define los procesos que involucran a la aplicación web
+	- Interactúa con los servidores de datos
+3- Datos
+	- Almacena y administra datos
+	- Mantiene la seguridad e integridad de los datos.
+- ¿Qué es ECMAScript?
+- ¿Cuál es la diferencia entre ECMAScript y JavaScript?
+- ¿Qué versión reciente de ECMAScript introdujo mejoras significativas en JavaScript (por ejemplo, ES6, ES7, ES2020)?
+
+Pregunta 8:
+- ¿Cuáles son las tres capas principales en una arquitectura de 3 capas?
+- ¿Qué funciones tiene cada una de estas capas?
+- ¿Cómo se comunican estas capas entre sí?
+- ¿Cuáles son las ventajas y desventajas de utilizar una arquitectura en 3 capas?
+- ¿En qué tipo de aplicaciones es especialmente útil aplicar esta arquitectura?
+
+Pregunta 9:
+- ¿Qué caracteriza a una aplicación SPA (Single Page Application)?
+
+Pregunta 10:
+- ¿Qué significa AJAX y cómo mejora la experiencia de usuario en una página web?
+- ¿Cuál es la diferencia entre una solicitud síncrona y asíncrona en AJAX?
+
+RESPUESTAS
+
+¿Qué es ECMAScript? ECMAScript es un estándar de especificación que define las reglas, las estructuras y las características del lenguaje de programación. JavaScript es la implementación más conocida de ECMAScript, pero existen otros lenguajes como JScript y ActionScript que también siguen este estándar.
+
+¿Cuál es la diferencia entre ECMAScript y JavaScript? ECMAScript es el estándar sobre el que se basa JavaScript. JavaScript es una implementación de ese estándar, es decir, ECMAScript define las características y reglas del lenguaje, mientras que JavaScript es la implementación concreta que los navegadores y otros entornos utilizan.
+
+¿Qué versión reciente de ECMAScript introdujo mejoras significativas en JavaScript? La versión ES6 (también conocida como ECMAScript 2015) introdujo mejoras muy significativas, como las funciones flecha, clases, módulos, promesas, let y const, entre otros. Otras versiones recientes, como ES7 (2016) y ES2020, también introdujeron nuevas funcionalidades como async/await, operadores de encadenamiento opcional y mejoras en la sintaxis.
+
+
+
+¿Cuáles son las tres capas principales en una arquitectura de 3 capas? Las tres capas principales en una arquitectura de 3 capas son:
+
+Capa de presentación (o capa de interfaz de usuario): Es la capa que interactúa directamente con el usuario, mostrando la información y recibiendo las entradas.
+Capa de lógica de negocio (o capa de procesamiento): Aquí se realizan las operaciones y reglas de negocio del sistema, procesando los datos y tomando decisiones.
+Capa de datos (o capa de persistencia): Se encarga de gestionar el acceso a las bases de datos o almacenamiento, almacenando y recuperando la información que la aplicación necesita.
+¿Qué funciones tiene cada una de estas capas?
+
+Capa de presentación: Recibe la interacción del usuario, muestra los resultados y se encarga de la parte visual. Asegura que la experiencia del usuario sea lo más amigable posible.
+Capa de lógica de negocio: Procesa las solicitudes del usuario, aplica las reglas de negocio y genera los datos necesarios para la capa de presentación. Actúa como intermediaria entre la interfaz de usuario y la base de datos.
+Capa de datos: Se encarga de acceder y almacenar los datos en la base de datos o cualquier otro sistema de almacenamiento. Puede realizar consultas y actualizaciones de datos.
+¿Cómo se comunican estas capas entre sí?
+
+Capa de presentación comunica con la capa de lógica de negocio para enviar solicitudes y recibir respuestas.
+Capa de lógica de negocio se comunica con la capa de datos para obtener o almacenar la información necesaria para ejecutar las operaciones.
+La comunicación entre las capas se realiza generalmente mediante llamadas a funciones o servicios y puede implicar protocolos como HTTP, APIs RESTful, o incluso comunicación interna mediante funciones dentro del mismo sistema.
+¿Cuáles son las ventajas y desventajas de utilizar una arquitectura en 3 capas?
+
+Ventajas:
+Separación de responsabilidades: Cada capa tiene una responsabilidad bien definida, lo que facilita el mantenimiento y la escalabilidad.
+Reutilización de código: Las capas de lógica de negocio y datos pueden ser reutilizadas en diferentes interfaces de usuario.
+Escalabilidad: Las capas se pueden escalar de forma independiente, lo que facilita el ajuste de la aplicación según el crecimiento del sistema.
+Desventajas:
+Complejidad: La gestión de tres capas puede hacer que la arquitectura sea más compleja, especialmente en aplicaciones más pequeñas.
+Rendimiento: Las llamadas entre capas pueden introducir sobrecarga y afectar el rendimiento si no se gestionan adecuadamente.
+¿En qué tipo de aplicaciones es especialmente útil aplicar esta arquitectura? La arquitectura en 3 capas es particularmente útil en aplicaciones empresariales y sistemas grandes, donde es necesario separar la presentación, la lógica de negocio y la persistencia de datos. Es ideal para aplicaciones web, aplicaciones móviles y sistemas distribuidos que requieren alta escalabilidad, flexibilidad y mantenimiento a largo plazo.
+
+
+¿Qué caracteriza a una aplicación SPA (Single Page Application)? Una SPA (Single Page Application) es una aplicación web que carga una sola página HTML y actualiza dinámicamente el contenido de esa página sin necesidad de recargar toda la página. Las interacciones del usuario con la aplicación no requieren solicitudes completas al servidor para cargar una nueva página, lo que mejora la experiencia del usuario al hacerla más rápida y fluida.
+
+
+¿Qué significa AJAX y cómo mejora la experiencia de usuario en una página web? AJAX (Asynchronous JavaScript and XML) es una técnica que permite actualizar partes de una página web sin necesidad de recargarla por completo. Esto mejora la experiencia del usuario al hacer las aplicaciones más rápidas, interactivas y eficientes, ya que solo se actualiza el contenido necesario sin recargar la página completa.
+
+¿Cuál es la diferencia entre una solicitud síncrona y asíncrona en AJAX?
+
+Síncrona: La solicitud bloquea la ejecución del código hasta que se obtiene la respuesta del servidor. Esto puede hacer que la página se congele o sea lenta.
+Asíncrona: La solicitud no bloquea la ejecución del código. El navegador puede seguir realizando otras tareas mientras espera la respuesta, mejorando la fluidez de la experiencia del usuario.
