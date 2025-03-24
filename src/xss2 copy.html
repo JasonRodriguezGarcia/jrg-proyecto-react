@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- añadirmos esta línea -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+
+    <title>XSS</title>
+</head>
+<body>
+    <input type="text" id="input" name="input" />
+
+    <button onclick="xss();">XSS Ejemplo</button>
+
+    <div id="resultado"></div>
+
+    <script>
+
+        
+        function xss() {
+            // el meta de la línea de arriba desactiva el código malicioso
+            //
+            // simular un evento peligroso - introducir en el campo de texto: 
+            //<img src="" onerror="window.alert('hacked');" />
+            // alert('hola');
+            // document.body.style.backgroundColor = "red";
+
+            const valor = document.getElementById("input").value;
+
+            const resultado = document.getElementById("resultado");
+
+            resultado.innerHTML = valor;
+
+
+
+
+        }
+
+
+    </script>
+
+</body>
+</html>

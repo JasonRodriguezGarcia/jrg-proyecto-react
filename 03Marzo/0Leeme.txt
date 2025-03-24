@@ -14,3 +14,9 @@ el cual llamará a NUESTROS COMPONENTES importados en App.js. Dichos COMPONENTES
 
 Iré guardando en distintas fechas los directorios y componentes creados para que luego se copien en /src MACHACANDO LO QUE 
 CONTENGAN, así se tendrá lo del día de la fecha copiada.
+
+para poder usar rutas
+
+npm install react-router-dom
+
+saneado de inputs
