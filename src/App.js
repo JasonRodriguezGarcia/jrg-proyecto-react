@@ -11,7 +11,7 @@ import Admin from './pages/Admin';
 import Equipo from './components/SpreadEquipo';
 import Dangerously from './components/Dangerously';
 import SanitizeInputDOMPurify from './components/SanitizeInputDOMPurify';
-import CookieExample from './components/CoockieExample';
+import CookieExample from './components/CookieExample';
 import CookieTheme from './components/CookieTheme';
 import CookieThemeSessionStorage from './components/CookieThemeSessionStorage';
 import SessionStorage from './components/SessionStorage';
