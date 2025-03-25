@@ -1,0 +1,47 @@
+:root {
+    --lightColor: purple;
+    --darkColor: grey;
+
+}
+.divContainer{
+    background-color: blanchedalmond;
+}
+.lightGroup {
+    fill: var(--lightColor);
+}
+
+@keyframes moveLight {
+    0% {
+      transform: translateX(0);  /* Start position */
+    }
+    50% {
+      transform: translateX(40px);  /* Move right */
+    }
+    100% {
+      transform: translateX(0);  /* Return to start */
+    }
+  }
+/* Hover effect for light group */
+svg:hover .lightGroup {
+    animation: moveLight 3s ease-in-out infinite;
+}
+
+.darkGroup{
+    fill: var(--darkColor);
+}
+@keyframes moveDark {
+    0% {
+      transform: translateX(0);  /* Start position */
+    }
+    50% {
+      transform: translateX(-40px);  /* Move right */
+    }
+    100% {
+      transform: translateX(0);  /* Return to start */
+    }
+  }
+/* Hover effect for light group */
+svg:hover .darkGroup {
+    animation: moveDark 3s ease-in-out infinite;
+}
+

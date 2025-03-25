@@ -16,6 +16,8 @@ import CookieTheme from './components/CookieTheme';
 import CookieThemeSessionStorage from './components/CookieThemeSessionStorage';
 import SessionStorage from './components/SessionStorage';
 import CuentaBancaria from './components/CuentaBancaria';
+import CookieVisitas from './components/CookieVisitas';
+import LeafletMap from './components/LeafletMap';
 
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
     <>
     <header>      
       <Navbar />
+      <CookieVisitas />
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -56,6 +59,7 @@ function App() {
       {/* <CookieThemeSessionStorage /> */}
       {/* <SessionStorage /> */}
       <CuentaBancaria />
+      <LeafletMap />
     </header>
     </>
   );

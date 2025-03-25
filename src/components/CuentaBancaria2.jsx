@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { CuentaBancariaClass } from "../services/CuentaBancariaClass";
-import Moneda from "./Moneda";
 const cuentaClass = new CuentaBancariaClass(0)
 
 
@@ -40,9 +39,6 @@ const CuentaBancaria = () => {
         sessionStorage.setItem("moneda", currency);
     }
 
-    const handleMonedaCambio = (data) => {
-        setMoneda(data)
-    }
     return (
         <>
             <h1>Cuenta Bancaria</h1>
@@ -54,11 +50,9 @@ const CuentaBancaria = () => {
             <button onClick={handleDepositar}>➕depositar</button>
             <button onClick={handleRetirar}>➖retirar</button>
 
-            {/* <button onClick={() => handleCurrencyToggle("$")}>$</button>
+            <button onClick={() => handleCurrencyToggle("$")}>$</button>
             <button onClick={() => handleCurrencyToggle("€")}>€</button>
-            <button onClick={() => handleCurrencyToggle("£")}>£</button> */}
-
-            <Moneda handleMonedaCambio={handleMonedaCambio} />
+            <button onClick={() => handleCurrencyToggle("£")}>£</button>
 
             {mensaje && <p>{mensaje}</p>}
         </>
