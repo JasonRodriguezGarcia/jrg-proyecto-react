@@ -10,8 +10,8 @@ npm start
 "npm start" llamará a index.html (html principal), el cual a su vez llamará al COMPONENTE App.js (abrir para ver), 
 el cual llamará a NUESTROS COMPONENTES importados en App.js. Dichos COMPONENTES creados están guardados en src/components.
 
-Iré guardando en distintas fechas los directorios y componentes creados para que luego se copien en /src MACHACANDO LO QUE 
-CONTENGAN, así se tendrá lo del día de la fecha copiada.
+Iré guardando en distintas fechas los directorios y componentes creados para que luego cuando se quieran usar se copian 
+en /src MACHACANDO LO QUE CONTENGAN, así se tendrá lo del día de la fecha copiada.
 
 para poder usar rutas
 npm install react-router-dom
@@ -22,5 +22,5 @@ npm install dompurify
 manejo cookies
 npm install js-cookies
 
-(opcional)creacion de componentes para el consentimiento de cookies
+(opcional no usado en ejercicios)creacion de componentes para el consentimiento de cookies
 npm install react-cookie-consent
