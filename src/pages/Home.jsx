@@ -1,19 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Buscador from '../components/Buscador';
+import home from "../../src/assets/home.jpg"
 
 const Home = ()=> {
 
     return (
         <>
-            <h1>Jom peich</h1>
-
-
-            {/*  como si fuera un <a href="http:// ..." */}
-            <Link to="/about">- Ir p'al abaut ... -</Link><br />
-
-            {/* este referesca toda la pantalla, el Link no */}
-            <a href="/about">ir al about</a>
+            <h3>Bienvenido a Nuestra Página</h3>
+            <img src={home} alt="Imagen de ejemplo" />
+            <p>Esta es una página de ejemplo donde ofrecemos información sobre nuestros productos y servicios. Puedes contactarnos o suscribirte para recibir descuentos exclusivos.</p>
         </>
     )
 }

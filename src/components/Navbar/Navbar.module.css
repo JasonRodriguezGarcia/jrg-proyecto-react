@@ -1,33 +1,68 @@
+body {
+  background-color: #444;
+  color: #777;
+  font-size: 14px;
+}
+.boton {
+  font-size: 12px;
+  padding: 4px;
+}
+.hidden-focus {
+  outline: none;
+}
+.auto-play {
+  display: none;
+}
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 15px 20px;
-  }
-  
-  .logo img {
-    height: 50px;
-  }
-  
-  .navLinks {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navLinks li {
-    display: inline;
-  }
-  
-  .navLinks a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .navLinks a:hover {
-    color: #ffcc00;
-  }
-  
+  background-color: #333;
+  padding: 10px;
+  color: white;
+}
+.navbar a {
+  color: white;
+  margin-right: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 1.5rem;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+.navbar a:hover {
+  background-color: white;
+  color: black;
+}
+.seccion {
+  display: none;
+}
+.activo {
+  display: block;
+}
+.footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+}
+.boton-animado {
+  position: absolute;
+  transition: all 0.3s;
+}
+h3 {
+  font-size: 1.5rem;
+  color: white;
+}
+p {
+  font-size: 1.3rem;
+  color: white;
+}
+
+button, textarea::placeholder, input::placeholder {
+  font-size: 1.2rem;
+}
+
+button:hover {
+  background-color: #777;
+  color: white;
+}
