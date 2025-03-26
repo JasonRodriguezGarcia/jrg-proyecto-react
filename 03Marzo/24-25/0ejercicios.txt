@@ -63,4 +63,7 @@ SpreadEquipo.jsx
 Uso del operador spread "..." para añadir datos a un array mediante un input o borrar elementos con un botón a la izquierda de 
 cada uno de ellos.
 
+LeafletMap.jsx
+Uso de mapas gratuítos en lugar de los de GoogleMaps.
+
 
