@@ -8,7 +8,16 @@ import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './utils/ProtectedRoute';
 import ProtectedRouteAdmin from './utils/ProtectedRouteAdmin';
 import Admin from './pages/Admin';
+import Equipo from './components/SpreadEquipo';
+import Dangerously from './components/Dangerously';
+import SanitizeInputDOMPurify from './components/SanitizeInputDOMPurify';
+import CookieExample from './components/CookieExample';
+import CookieTheme from './components/CookieTheme';
+import CookieThemeSessionStorage from './components/CookieThemeSessionStorage';
+import SessionStorage from './components/SessionStorage';
+import CuentaBancaria from './components/CuentaBancaria';
 import CookieVisitas from './components/CookieVisitas';
+import LeafletMap from './components/LeafletMap';
 
 
 function App() {
@@ -40,6 +49,17 @@ function App() {
 
       </Routes>
       
+      {/* <SpreadDemo /> */}
+
+      <Equipo />
+      {/* <Dangerously /> */}
+      {/* <SanitizeInputDOMPurify /> */}
+      {/* <CookieExample /> */}
+      {/* <CookieTheme /> */}
+      {/* <CookieThemeSessionStorage /> */}
+      {/* <SessionStorage /> */}
+      {/* <CuentaBancaria /> */}
+      {/* <LeafletMap /> */}
     </header>
     </>
   );
