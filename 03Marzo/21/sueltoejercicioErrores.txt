@@ -41,3 +41,22 @@ function dividir(a, b) {
         console.log ("TERMINADO !!!")
     }
   }
+
+  //
+  // también podríamos crear el siguiente código en react
+function dividir(a, b){
+
+    if (b === 0) {
+    throw new Error("No se puede dividir por cero");
+    }
+    const resultado = a / b;
+    console.log(`El resultado de la división es: ${resultado}`);
+} 
+
+// y en otra parte del código
+try {
+    dividir()
+}
+catch (error) {
+    console.log (error.message)
+}

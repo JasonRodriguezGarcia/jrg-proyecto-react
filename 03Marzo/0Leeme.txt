@@ -16,11 +16,22 @@ en /src MACHACANDO LO QUE CONTENGAN, así se tendrá lo del día de la fecha cop
 para poder usar rutas
 npm install react-router-dom
 
-saneado de inputs
+saneado de inputs para evitar injección de código malicioso
 npm install dompurify
 
 manejo cookies
-npm install js-cookies
+npm install js-cookie
 
-(opcional no usado en ejercicios)creacion de componentes para el consentimiento de cookies
+manejo de polyfill (compatibilidad con navegadores antiguos)
+npm install core-js
+
+manejo mapas leaflet
+npm install react-leaflet leaflet
+
+(opcional no usado en ejercicios) creacion de componentes para el consentimiento de cookies
 npm install react-cookie-consent
+
+(opcional no usado en ejercicios) creación de componentes para el manejo de cookies (la típica ventana al entrar en una web)
+npm install react-cookie-consent
+
+(opcional no usado en ejercicios) llamadas fetch con funcion callback de ficheros .jsonp

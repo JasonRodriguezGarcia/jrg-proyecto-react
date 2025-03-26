@@ -51,15 +51,15 @@ function App() {
       
       {/* <SpreadDemo /> */}
 
-      {/* <Equipo /> */}
+      <Equipo />
       {/* <Dangerously /> */}
       {/* <SanitizeInputDOMPurify /> */}
       {/* <CookieExample /> */}
       {/* <CookieTheme /> */}
       {/* <CookieThemeSessionStorage /> */}
       {/* <SessionStorage /> */}
-      <CuentaBancaria />
-      <LeafletMap />
+      {/* <CuentaBancaria /> */}
+      {/* <LeafletMap /> */}
     </header>
     </>
   );

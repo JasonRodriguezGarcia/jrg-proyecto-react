@@ -1,0 +1,66 @@
+***********************
+* importante !!
+* estudiar el cuado comparativo de cookies vs Local Storage vs SessionStorage ya que irá a examen fijo !!
+* está en https://github.com/chekulhan/Desarrollo-Web/blob/main/UF1842-Web-Components/reactjs/04-other/01.1-cookies.md
+***********************
+App.js
+Contiene los componentes usados muchos comentados para solamente ejectuar el que interese
+OJO los ejercicios requieren librerías nuevas a instalar
+Fijarse en los import de los componentes
+algún ejemplo: npm install js-cookie
+otro: npm install dompurify
+
+
+/components
+CookieExample.jsx
+Ejercicio para el manejo de cookies que se encuentran almacenadas en el equipo y accesibles en la misma pantalla que el Local 
+Storage (F12 en el navegador - Aplicación), pero en el apartado de Cookies. Se usa también el usseEffect para verificar si la 
+cookie ya existe de antemano. Comentar que dicho usseEffect tiene el parámetro en blanco [] para que SOLAMENTE SE EJECUTE 
+LA PRIMERA VEZ QUE EJECUTAMOS el componente. Según pulsemos un botón u otro se establecerá el valor de la cookie a un valor 
+concreto o se borrará la cookie. Comentar que una cookie tiene un montón de atributos, pero aquí solo manejamos 2, valor y fecha 
+de expiración.
+
+****NOTA MIA*** // usseEffect funciona de forma similar a componentDidMount y componentDidUpdate del antiguo React
+
+CookieTheme.jsx
+Ejercicio para el manejo de la cookies, que en este caso el componente inicialmente recupera a una constante el valor de una 
+cookie para el color del fondo (sin el uso de usseEffect) y lo que hacemos con 2 botones es cambiar el fondo entre "light" 
+o "dark" (dicho cambio es detectado por el usseEffect que tiene OJO como depencia [theme] osea la variable "theme") o borrar el
+cookie.
+
+CookieThemeSessionStorage.jsx
+Ejercicio partiendo de CookieTheme.jsx en el que se añade unas líneas de manejo del SessionStorage, para ver que se pueden 
+manejar ambas funcionalidades a la hora de guardar/recopilar información.
+
+CookieVisitas.jsx
+Ejercicio para el manejo de cookies en el que se manacena una que guarda las visitas al compomente App, ya que en este 
+componente se ejecuta CookieVisitas.jsx. Añadido despues en el Return un código para el manejo de ficheros SVG (opcional) creados 
+en figma.com.
+
+CookieVisitas.module.css
+Css para los fichero SVG (opcional)
+
+CuentaBancaria.jsx
+Ejercicio en el que se hace el uso de la clase CuentaBancariaClass.js (que está en /services no en /components). Detalle
+IMPORTANTE es que la clase es instanciada junto a los "import" osea fuera de la definición del componente CuentaBancaria. Así
+podemos manejar sus atributos/métodos, ya que si estubiera dentro se machacaría cada vez que se renderiza el componente.
+En este componente se ve código comentado para el uso del componente HIJO Moneda. El código inicial está en CuentaBancaria2.jsx 
+
+Dangerously.jsx
+Filtrado de input para evitar la injección de códido malicioso. Poner lo siguiente a ver qué sale: <b>Hola<b>
+https://github.com/chekulhan/Desarrollo-Web/blob/main/UF1842-Web-Components/navegador/01-seguridad.md
+
+SanitizeInputDOMPurify.jsx
+Ejercicio para el filtrado de input. Si ponemos en el input <b>Hola<b> el resultado es un Hola que no está en negrita
+
+SessionStorage.jsx
+Curioso ejercicio para el manejo del SessionStorage en el que los input van apareciendo sucesivamente conforme terminamos 
+uno anterior mediante la variable "step" que en el html según tenga un valor u otro irá ejecutando código el cual irá guardando 
+en el SessionStorage el valor introducido. Usa el usseEffect que se ejecuta UNA SOLA VEZ por tener un [] para establecer un 
+valor inicial para los datos del SessionStorage.
+
+SpreadEquipo.jsx
+Uso del operador spread "..." para añadir datos a un array mediante un input o borrar elementos con un botón a la izquierda de 
+cada uno de ellos.
+
+

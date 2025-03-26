@@ -19,26 +19,26 @@ const CuentaBancaria = () => {
     console.log("renderizar")
 
     const handleDepositar = ()=> {
-        cuentaClass.depositar(inputSaldo)
-        setSaldo(cuentaClass.saldo)
+        cuentaClass.depositar(inputSaldo)   // añadimos saldo a la clase mediante el método depositar
+        setSaldo(cuentaClass.saldo)         // actualizamos "saldo" recuperando el saldo de la clase
     }
 
     const handleRetirar = () => {
         try {
-            cuentaClass.retirar(inputSaldo)
-            setSaldo(cuentaClass.saldo)
+            cuentaClass.retirar(inputSaldo) // restamos saldo a la clase mediante el método retirar
+            setSaldo(cuentaClass.saldo)     // actualizamos "saldo" recuperando el saldo de la clase
         }
-        catch (error) {
+        catch (error) {                     // manejo de errores. ya implementado dentro de la clase (MIRAR CLASE)
             console.log(error.message)
             setMensaje(error.message)
             setTimeout(()=> setMensaje(""), 2000)
         }
     }
 
-    const handleCurrencyToggle = (currency) => {
-        setMoneda(currency)
-        sessionStorage.setItem("moneda", currency);
-    }
+    // const handleCurrencyToggle = (currency) => {
+    //     setMoneda(currency)
+    //     sessionStorage.setItem("moneda", currency);
+    // }
 
     const handleMonedaCambio = (data) => {
         setMoneda(data)
@@ -58,7 +58,9 @@ const CuentaBancaria = () => {
             <button onClick={() => handleCurrencyToggle("€")}>€</button>
             <button onClick={() => handleCurrencyToggle("£")}>£</button> */}
 
-            <Moneda handleMonedaCambio={handleMonedaCambio} />
+    {/* insertado componente Moneda al que le pasamos un prop que en este caso es una función
+    para que nos devuelva la moneda elegida en dentro del componente Moneda */}
+            <Moneda handleMonedaCambio={handleMonedaCambio} />  
 
             {mensaje && <p>{mensaje}</p>}
         </>

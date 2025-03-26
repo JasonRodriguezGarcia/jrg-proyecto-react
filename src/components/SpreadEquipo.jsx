@@ -3,11 +3,14 @@ import { useState } from "react";
 export default function Equipo() {
   const [jugadores, setJugadores] = useState(["Messi", "Ronaldo", "Neymar"]);
   const [nuevoJugador, setNuevoJugador] = useState("");
+  const [mensaje, setMensaje] = useState("")
 
   // TO DO: Crear una funcion para agregarJugador usando spreading
 
   const eliminarJugador = (nombre) => {
-    setJugadores(jugadores.filter(jugador => jugador !== nombre)); 
+    let confirmacion = window.confirm("Confirmación borrado !!\nAceptar o Cancelar")
+    if (confirmacion == true)
+        setJugadores(jugadores.filter(jugador => jugador !== nombre)); 
   };
 
   const añadirJugador = (nuevoJugador) => {
@@ -16,8 +19,15 @@ export default function Equipo() {
 
     if (nuevoJugador.length === 0)
         return
-    if (jugadores.includes(nuevoJugador))
+    if (jugadores.includes(nuevoJugador)) {
+        // si el jugador ya existe no lo añade y sale un aviso
+        setMensaje("Jugador ya existente !!")
+        setNuevoJugador("")
+        setTimeout(() => {
+            setMensaje("")
+        }, 2000);
         return
+    } 
     setJugadores([...jugadores, nuevoJugador])
   }
 
@@ -41,6 +51,11 @@ export default function Equipo() {
         })}
        
       </ul>
+      {/* 
+      TO DO: 
+         Agregar un boton para ejecutar la funcion agregarJugador
+     */}
+     
       <button onClick={() =>añadirJugador(nuevoJugador)}>➕</button>
       <input 
         type="text" 
@@ -48,12 +63,7 @@ export default function Equipo() {
         value={nuevoJugador} 
         onChange={(e) => setNuevoJugador(e.target.value)} 
       />
-
-       {/* 
-       TO DO: 
-          Agregar un boton para ejecutar la funcion agregarJugador
-      */}
-      
+        {mensaje && <p>{mensaje}</p>}
     </div>
   );
 }

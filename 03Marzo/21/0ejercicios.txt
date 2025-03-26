@@ -1,0 +1,18 @@
+sueltoejercicioErrores.txt
+Ejercicio para probar el manejo de errores al dividir 2 números "a" y "b"(que podrían venir de 2 input). La operación se 
+realizaría y podríamos manejar errores, ya que en caso de que el número "b" fuese cero.
+
+/components
+Calculadora.jsx
+Mezcla de varios ejercicios en uno. Primero crear una calculadora que calcula una operación aritmética según el boton pulsado 
+de suma, resta, multiplicar y dividir (en dividir se podría aplicar la lógica de manejo de errores del ejercicio sueltoejercicioErrores.txt).
+Segundo clasificar si el primer número introducido es positivo, negativo o cero. Tercero calcular la media de un arry "notas".
+Cuarto añadir un input en el que verificamos la clasifición de la nota introducida con un "switch".
+
+SpreadDemo copy.jsx
+Ejemplo básico del manejo de usseEffect.
+
+SpreadDemo.jsx
+Ejemplo del uso del "spread" operator que son 3 puntos "..." y que nos permiten cosas como añadir información a un array, 
+fusionar arrays entre otros. En este ejercicio lo que hace es añadir el número introducido al array "resultado".
+
