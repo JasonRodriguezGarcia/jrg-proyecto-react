@@ -1,13 +1,8 @@
 import './App.css';
 import {Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
-import About from './pages/About';
 import Navbar from './components/Navbar/Navbar';
 import Contact from './pages/Contact';
-import Dashboard from './pages/Dashboard';
-import ProtectedRoute from './utils/ProtectedRoute';
-import ProtectedRouteAdmin from './utils/ProtectedRouteAdmin';
-import Admin from './pages/Admin';
 import CookieVisitas from './components/CookieVisitas';
 import Suscribe from './pages/Suscribe';
 import Video from './pages/Video';

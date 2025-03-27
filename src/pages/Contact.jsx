@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import home from "../../src/assets/home.jpg" // Esto es lo recomendado ya que cogiendo de aqui es más optimizado
 const Contact = ()=> {
 
     return (
