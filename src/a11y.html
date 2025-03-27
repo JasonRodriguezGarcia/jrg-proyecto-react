@@ -43,6 +43,13 @@
 
 </head> 
 <body>
+    <!-- "a11y" es una abreviatura de "accesibility" palabra de 11 letras, y se refiere a la accesibilidad de un 
+        recurso por parte de personas con algún tipo de discapacidad, ya sea visual, motora, mental, ...-->
+    <!-- STANDARES Accesibilidad
+        https://www.w3.org/WAI/videos/standards-and-benefits/es
+    INFO sobre accesibilidad y diseño apps accesibles
+        https://webaim.org/ -->
+
     <h1>Demo</h1>
     <p>Hola a todos</p>
     <div id="padre">
@@ -52,13 +59,15 @@
         </div>
     </div>
     <form action="">
-        <!-- el narrador de windows podrá leer esto  -->
+        <!-- el narrador de windows podrá leer esto, para activa narrador windows buscar "narrador" en barra de windows -->
         <!-- <label for="nombre">Introducir nombre: </label>  -->
         <!-- <input type="text" id="nombre" name="nombre"
             autofocus placeholder="Introduce nombre"
         > -->
-            <!-- con aria-label el narrador lo detecta aun sin label -->
-        <input type="text" aria-label="Introducir nombre" id="nombre" name="nombre"
+            <!-- con aria-label el narrador detecta texto a leer aun sin label -->
+            <!-- con aria-live si el narrador estaba dictando algo y el elemento input recibe el enfoque,
+                 con "polite" espera a que termine de narrar, con "assertive" interrumpe y dicta el texto del input -->
+        <input type="text" aria-label="Introducir nombre" aria-live="polite" id="nombre" name="nombre"
             autofocus placeholder="Introduce nombre"
         >
     </form>
@@ -79,7 +88,7 @@
     DEMO 1.2
     agregar  - autofocus atributo a input
 
-    DEMO 2: aria-label sin tag lablel
+    DEMO 2: aria-label sin tag label
     2. aria-label="nombre"
     3. Mostrar accesibilidad opciones de google dev tools
 
