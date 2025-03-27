@@ -1,0 +1,31 @@
+
+
+//reconocimiento de voz (speech sintesys)
+//texto a voz
+
+//instanciar web api
+const utterance = new SpeechSynthesisUtterance("hola, cómo estas?")
+// reproducimos
+window.speechSynthesis.speak(utterance) 
+
+// asignamos a español
+utterance.lang = "es-ES"
+utterance.lang = "pt-PT"
+
+// manejo voces
+// ver voces disponibles
+const voices = window.speechSynthesis.getVoices()
+// para ver voces
+voices
+// filtramos para españoles
+    const spanishVoices = voices.filter(voice => voice.lang == "es-ES")
+// per ver resultado
+
+spanishVoices
+
+// seleccionamos una voz distinta
+const voice = spanishVoices[2]
+
+// selccionamos voz para utterance con valor de voice
+utterance.voice = voice
+

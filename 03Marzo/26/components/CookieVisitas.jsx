@@ -17,11 +17,10 @@ const CookieVisitas = () => {
         }
     }, [])
 
-    // Cookies.remove("theme")
-
     return (
         <div className={styles.divContainer}>
             <p>Visitas: {visitas}</p>
+
         </div>
     )
 }

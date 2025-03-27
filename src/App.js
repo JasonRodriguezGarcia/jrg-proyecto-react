@@ -1,31 +1,29 @@
 import './App.css';
 import {Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
+import About from './pages/About';
 import Navbar from './components/Navbar/Navbar';
 import Contact from './pages/Contact';
+import Dashboard from './pages/Dashboard';
+import ProtectedRoute from './utils/ProtectedRoute';
+import ProtectedRouteAdmin from './utils/ProtectedRouteAdmin';
+import Admin from './pages/Admin';
 import CookieVisitas from './components/CookieVisitas';
-import Suscribe from './pages/Suscribe';
-import Video from './pages/Video';
-import Footer from './pages/Footer';
-
-
+import SpeechToText from './components/SpeechToText';
+import SpeechQuiz from './components/SpeechQuiz';
+import EnglishTests from './components/Navbar/EnglishTests';
 function App() {
   return (
 
     <>
     <header>      
       <Navbar />
+      <CookieVisitas />
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/about" element={<About />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
-        <Route path="/suscribe" element={<Suscribe />}></Route>
-        <Route path="/video" element={<Video />}></Route>
-        {/* ruta dinámica añadiendo un parámetro
-        /coches/100
-        /coches/2
-        /coches/ford
-        */}
         {/* <Route
           path="/dashboard"
           element={<ProtectedRoute element={<Dashboard />} isAuthenticated={false}/>}
@@ -34,11 +32,11 @@ function App() {
           path="/admin"
           element={<ProtectedRouteAdmin element={<Admin />} isAuthenticated={false}/>}
           /> */}
-         {/* <Route path="/buscar" element={<BuscadorResultadoPage />} /> */}
 
       </Routes>
-      <Footer />
-      <CookieVisitas />
+      {/* <SpeechToText /> */}
+      {/* <SpeechQuiz /> */}
+      <EnglishTests />
     </header>
     </>
   );
