@@ -10,6 +10,7 @@ window.speechSynthesis.speak(utterance)
 
 // asignamos a español
 utterance.lang = "es-ES"
+// asignamos a portugués
 utterance.lang = "pt-PT"
 
 // manejo voces

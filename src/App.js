@@ -11,7 +11,7 @@ import Admin from './pages/Admin';
 import CookieVisitas from './components/CookieVisitas';
 import SpeechToText from './components/SpeechToText';
 import SpeechQuiz from './components/SpeechQuiz';
-import EnglishTests from './components/Navbar/EnglishTests';
+import EnglishTests from './components/EnglishTest/EnglishTests';
 function App() {
   return (
 
