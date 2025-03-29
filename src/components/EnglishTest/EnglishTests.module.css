@@ -1,27 +1,33 @@
-
-span {
-    border: 1px solid;
-}
-
-button, span {
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    min-width: 80px;
-    cursor: pointer;
-    user-select: none;
-}
-span:hover {
-    background-color: lightgray;
-}
-
-button:disabled {
-    pointer-events: none;
-}
-button:enabled {
-    background-color: yellowgreen;
-}
-img {
-    width: 100%;
+.pagecontainer {
+    text-align: center;
     
+    h1 {
+        color: blue;
+    }
+    span {
+        border: 1px solid;
+    }
+    
+    button, span {
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+        min-width: 80px;
+        cursor: pointer;
+        user-select: none;
+    }
+    span:hover {
+        background-color: lightgray;
+    }
+    
+    button:disabled {
+        pointer-events: none;
+    }
+    button:enabled {
+        background-color: yellowgreen;
+    }
+    img {
+        width: 100%;
+        
+    }
 }

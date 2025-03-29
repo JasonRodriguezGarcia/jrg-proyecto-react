@@ -28,6 +28,11 @@ npm install core-js
 manejo mapas leaflet
 npm install react-leaflet leaflet
 
+manejo de MUI en React
+npm install @mui/material @emotion/react @emotion/styled
+npm install @fontsource/roboto
+npm install @mui/icons-material
+
 (opcional no usado en ejercicios) creacion de componentes para el consentimiento de cookies
 npm install react-cookie-consent
 
