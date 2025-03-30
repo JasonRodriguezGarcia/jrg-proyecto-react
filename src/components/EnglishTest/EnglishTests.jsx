@@ -12,10 +12,12 @@ import eigth from "../../assets/EnglishTests/short-overweight-484x764.png"
 import nine from "../../assets/EnglishTests/short-overweight-484x764.png"
 
 // Formulario de múltiples pasos
-const arrayPosibleReplies= ["friendly", "talkative", "generous", "kind", "lazy", "funny", "clever", "shy",]
-const exercicesText = [ 
-    "Exercice 1- Click the adjetive that match to the definition", "Exercice 2- Match the image with descripcion" ]
 
+const exercicesText = [  // texto Ejercicios 1 y 2
+    "Exercice 1- Click the adjetive that match to the definition", "Exercice 2- Match the image with descripcion" ]
+// array Ejercicio 1 posibles respuestas
+const arrayPosibleReplies= ["friendly", "talkative", "generous", "kind", "lazy", "funny", "clever", "shy",]
+// array con Preguntas y respuestas
 const arrayQuestions1 = [
     {textQuestion: "A person who is quick at learning and understanding is ...", textAnswer: "clever", keyAnswer: 6},
     {textQuestion: "A person who is open and warm is ...", textAnswer: "kind", keyAnswer: 3},
@@ -26,28 +28,29 @@ const arrayQuestions1 = [
     {textQuestion: "A person who can't talk easily to people he/she doesn't know is ...", textAnswer: "shy", keyAnswer: 7},
     {textQuestion: "A person who talks a lot is ...", textAnswer: "talkative", keyAnswer: 1},
 ]
-
+// array Ejercicio 2 posible respuestas
 const arrayPosibleReplies2 = [ one, two, three, four, five, six, seven, eigth, nine ]
+// array con Preguntas y respuestas
 const arrayQuestions2 = [
-    {text: "She has curly red hair", reply: "2"},
-    {text: "She has long straight hair", reply: "3"},
-    {text: "She has big blue eyes", reply: "1"},
-    {text: "She has short blonde hair", reply: "6"},
-    {text: "He has beard and moustache", reply: "5"},
-    {text: "He's bald", reply: "4"},
-    {text: "He's very tall and thin", reply: "7"},
-    {text: "He's medium height and very slim", reply: "8"},
-    {text: "He's quite short and a bit overweight", reply: "8"},
+    {text: "She has curly red hair", answer: "1"},
+    {text: "She has long straight hair", answer: "2"},
+    {text: "She has big blue eyes", answer: "0"},
+    {text: "She has short blonde hair", answer: "5"},
+    {text: "He has beard and moustache", answer: "4"},
+    {text: "He's bald", answer: "3"},
+    {text: "He's very tall and thin", answer: "6"},
+    {text: "He's medium height and very slim", answer: "7"},
+    {text: "He's quite short and a bit overweight", answer: "8"},
 ]
+// Valores del Select del Ejercicio2
+const arrayReplies2 = ["", 0, 1, 2, 3, 4, 5, 6, 7, 8]
 
 function EnglishTests() {
-/// estudiar!!
+/// estudiar!!  // Para el Ejercicio1, manejo de los estilos al fallar o acertar al pulsar en una posible respuesta
     const [answerStyles, setAnswerStyles] = useState(new Array(arrayPosibleReplies.length).fill(null));
 ///
-
-    const [step, setStep] = useState(1);
+    const [step, setStep] = useState(1); // manejo del estado del paso actual
   // usar para guardar nombre de un input
-  // nota al final del ejercicio
     const [buttonsDisabled, setButtonsDisabled] = useState(true)                  // desactiva o no los botones
   // sessionStorage.setItem('nombre', nombre);
     const [success, setSuccess] = useState(0)                                   // marcador de acierto
@@ -55,101 +58,72 @@ function EnglishTests() {
     const [alreadySuccess, setAlreadySuccess] = useState(false)                 // detector de si ya acertó
     const [alreadyFailed, setAlreadyFailed] = useState(false)                   // detector de si ya falló
     const [exercicesTitles, setExercicesTitles] = useState(exercicesText[0])    // Titulo del ejercicio actual
+    const [arrayPosibleReplies2Selected, setArrayPosibleReplies2Selected] = useState(new Array(9).fill("")); // ejercicio2 respuestas seleccionadas
 
     // useEffect(()=> {
     //     hablar("Welcome to the English Tests. Please, read the questions and select your choice.")
     // },[])
 
+// handle functions
     const handleNextStep = () => {
         // Guardar los datos del paso actual en sessionStorage antes de pasar al siguiente paso
-        // TO DO - que datos hace falta guardar cada vez que pasas al siguiente step
-        // setStep(step + 1);
         setStep(prevStep => {
-            let stepTMP = prevStep
-            stepTMP++
+            let stepTMP = prevStep +1
+            // stepTMP++
+            debugger
+            if (stepTMP === 11) {
+                setSuccess(0);
+                setFail(0);
+        
+                for (let index = 0; index < arrayQuestions2.length; index++) {
+                    // const element = array[index];
+                    debugger
+                    if (arrayQuestions2[index].answer === arrayPosibleReplies2Selected[index])
+                        setSuccess(prevSuccess => prevSuccess +1)
+                    else
+                        setFail(prevFail =>prevFail +1)
+                }
+            }
+            if (stepTMP === 10) setExercicesTitles(exercicesText[1])
+
             return stepTMP
         });
         setAnswerStyles(new Array(arrayPosibleReplies.length).fill(null));
         setAlreadySuccess(false)
         setAlreadyFailed(false)
         setButtonsDisabled(true)
-        switch (step) {
-            case 9:
-                setExercicesTitles("Exercice results")
-                break
-
-            case 10:
-                setExercicesTitles(exercicesText[1])
-                break
-            default:
-        }
     };
 
     const handleReboot = () => {
         setStep(1)
-    }
-
-// Funcion para clasificar una nota - usar switch
-// Si la nota >= 90 => 'A'
-// Si la nota >= 80 => 'B'
-// Si la nota >= 50 => 'C'
-// Si la nota <= 49 => 'Suspenso'
-
-  // const calcularGraduacion = () => {
-  //   switch (true){
-  //     case notaEvaluacion>=90:
-  //         setResultado("A")
-  //         break
-  //     case notaEvaluacion>=80:
-  //         setResultado("B")
-  //         break
-  //     case notaEvaluacion>=50:
-  //         setResultado("C")
-  //         break
-      
-  //     default:
-  //     setResultado("Suspenso!!!")
-  //   }
-  // }
-
-    const ShowArrayPossibleReplies = () => {
-        return (
-            <p id="posibleReplies">
-                {arrayPosibleReplies.map ((reply, index)=> 
-                    <span key={index}
-                    onClick={() => checkAnswer(index)}
-                    style={answerStyles[index]}
-                    >
-                        {reply} 
-                    </span>
-                )}
-            </p>
-        )
+        setAnswerStyles(new Array(arrayPosibleReplies.length).fill(null));
+        setAlreadySuccess(false)
+        setAlreadyFailed(false)
+        setButtonsDisabled(true)
     }
 
     const ShowExerciceResults = () => {
         return (
             <>
-                <h4>Exercie Results:</h4>
+                <h4>Exercise Results:</h4>
                 <p>Success: {success}</p>
                 <p>Failed: {fail}</p>
             </>
         )
     }
 
-    const checkAnswer = (answerCheck) => {
+    const checkAnswer = (answerCheck, event) => {
         let textoHablar = ""
         console.log(answerCheck)
         console.log(arrayQuestions1[step-1])
-        debugger
         if(arrayQuestions1[step-1].keyAnswer === answerCheck) {
-        console.log(" es Correcto") 
-        setAnswerStyles(prevStyles => {
-        const updatedStyles = [...prevStyles];
-            updatedStyles[answerCheck] = { backgroundColor: "green", color: "white" };
-            return updatedStyles;
-        });
-    
+            console.log(" es Correcto") 
+            setAnswerStyles(prevStyles => {
+            const updatedStyles = [...prevStyles];
+                updatedStyles[answerCheck] = { backgroundColor: "green", color: "white" };
+                return updatedStyles;
+            });
+        
             setButtonsDisabled(false)
             textoHablar = `${arrayQuestions1[step-1].textAnswer}, is correct!`
             if (!alreadyFailed && !alreadySuccess)
@@ -167,9 +141,7 @@ function EnglishTests() {
             updatedStyles[answerCheck] = { backgroundColor: "red", color: "white" };
             return updatedStyles;
             });
-
-            debugger
-            textoHablar = "Sorry, it's not correct!"
+            textoHablar = `Sorry, ${event.target.innerHTML} it's not correct!`
             if (!alreadyFailed && !alreadySuccess) {
                 setFail(prevFail => {
                     let failTMP = prevFail
@@ -183,6 +155,11 @@ function EnglishTests() {
     }
 
     const hablar = (texto) => {
+        debugger
+        const availableVoices = window.speechSynthesis.getVoices()
+        console.log("Voces disponibles: ", availableVoices)
+        const spanishVoices = availableVoices.filter(voice => voice.lang === "es-ES")
+        console.log("Voces españolas: ", spanishVoices)
         // const texto = "Hola, buenos dias!";
         const speech = new SpeechSynthesisUtterance(texto);
         speech.lang = "en-EN";
@@ -190,59 +167,101 @@ function EnglishTests() {
             console.log("Speech ended");
         };
         // Trigger the speech synthesis
+        debugger
         window.speechSynthesis.speak(speech);
+    }
+
+    // Funciones Ejercicio1
+    const ShowArrayPossibleReplies = () => {
+        return (
+            <p>
+                {arrayPosibleReplies.map ((reply, index)=> 
+                    <span key={index}
+                        onClick={(e) => checkAnswer(index, e)}
+                        style={answerStyles[index]}
+                    >
+                        {reply} 
+                    </span>
+                )}
+            </p>
+        )
+    }
+
+    // Funciones Ejercicio2
+    const ArrayQuestions2Selected = () => {
+        return (
+            <>
+                {arrayReplies2.map((reply, index)=> 
+                    <option key={index} value={reply}>{reply}</option>
+                )}
+            </>
+        )
     }
 
     const ShowArrayPossibleReplies2 = () => {
         return (
-        <>
+        <div className={styles.leftColumn}>
             {arrayPosibleReplies2.map ((reply, index)=> 
-                <img key={index} src={reply} alt={"image"+{index}} />
+                <div key={index} className={styles.spanImage}>
+                    <span className={styles.imgNr}>{index}</span>
+                    <img src={reply} alt={"image"+{index}} />
+                </div>
             )}
-        </>
-        )
-    }
-
-    const ColumnLeft = () => {
-        return (
-        <ShowArrayPossibleReplies />
-        )
-    }
-    const Exercice2 = () => {
-        return (
-        <div>
-            <div id="columLeft">
-            <ColumnLeft />
-            </div>
-            <div id="columnRight">
-
-            </div>
         </div>
         )
+    }
+
+    const ShowArrayQuestions2 = () => {
+        return (
+            <div className={styles.rightColumn}>
+                {arrayQuestions2.map ((question, index)=> 
+                    <p key={index}
+                    
+                    >
+                        <select name="arrayQuestions2Selected" id="arrayQuestions2Selected"
+                            onChange={(event) => handleSelectArrayQuestions2SelectedChange(event, index)}
+                            value = {arrayPosibleReplies2Selected[index]}
+                        >
+                            <ArrayQuestions2Selected />
+                        </select>
+                        {question.text} 
+                    </p>
+                )}
+            </div>
+        )
+
+    }
+
+    const handleSelectArrayQuestions2SelectedChange = (event, index) => {
+        const newSelectedValues = [...arrayPosibleReplies2Selected];
+        newSelectedValues[index] = event.target.value || ""; // Guarda el valor seleccionado
+        setArrayPosibleReplies2Selected(newSelectedValues); // Actualiza el estado
+        const desabilitarBotones = newSelectedValues.includes("") // check si todas las opciones están en uso
+        setButtonsDisabled(desabilitarBotones)
     }
 
     return (
         <div className={styles.pagecontainer}>
             <h1>English Tests</h1>
             <h3>{exercicesTitles}</h3>
-            {/* <h4>Success: {success} Fails: {fail}</h4> */}
             {step === 1 && (
-                <div>
-                <p>{arrayQuestions1[step-1].textQuestion}</p>
-                {<ShowArrayPossibleReplies />}
-                <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
+                <div className={styles.exercice1}>
+                    <p>{arrayQuestions1[step-1].textQuestion}</p>
+                    {<ShowArrayPossibleReplies />}
+                    <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
                 </div>
             )}
 
             {step === 2 && (
-                <div>
-                <p>{arrayQuestions1[step-1].textQuestion}</p>
-                {<ShowArrayPossibleReplies />}
-                <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
+                <div className={styles.exercice1}>
+                    <p>{arrayQuestions1[step-1].textQuestion}</p>
+                    {<ShowArrayPossibleReplies />}
+                    <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
                 </div>
             )}
+
             {step === 3 && (
-                <div>
+                <div className={styles.exercice1}>
                     <p>{arrayQuestions1[step-1].textQuestion}</p>
                     {<ShowArrayPossibleReplies />}
                     <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
@@ -250,76 +269,72 @@ function EnglishTests() {
             )}
 
             {step === 4 && (
-                <div>
-                <p>{arrayQuestions1[step-1].textQuestion}</p>
-                {<ShowArrayPossibleReplies />}
-                <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
-
+                <div className={styles.exercice1}>
+                    <p>{arrayQuestions1[step-1].textQuestion}</p>
+                    {<ShowArrayPossibleReplies />}
+                    <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
                 </div>
             )}
 
             {step === 5 && (
-                <div>
-                <p>{arrayQuestions1[step-1].textQuestion}</p>
-                {<ShowArrayPossibleReplies />}
-                <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
-
+                <div className={styles.exercice1}>
+                    <p>{arrayQuestions1[step-1].textQuestion}</p>
+                    {<ShowArrayPossibleReplies />}
+                    <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
                 </div>
             )}
 
             {step === 6 && (
-                <div>
-                <p>{arrayQuestions1[step-1].textQuestion}</p>
-                {<ShowArrayPossibleReplies />}
-                <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
-
+                <div className={styles.exercice1}>
+                    <p>{arrayQuestions1[step-1].textQuestion}</p>
+                    {<ShowArrayPossibleReplies />}
+                    <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
                 </div>
             )}
 
             {step === 7 && (
-                <div>
-                <p>{arrayQuestions1[step-1].textQuestion}</p>
-                {<ShowArrayPossibleReplies />}
-                <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
-
+                <div className={styles.exercice1}>
+                    <p>{arrayQuestions1[step-1].textQuestion}</p>
+                    {<ShowArrayPossibleReplies />}
+                    <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
                 </div>
             )}
 
             {step === 8 && (
-                <div>
-                <p>{arrayQuestions1[step-1].textQuestion}</p>
-                {<ShowArrayPossibleReplies />}
-                <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
-
+                <div className={styles.exercice1}>
+                    <p>{arrayQuestions1[step-1].textQuestion}</p>
+                    {<ShowArrayPossibleReplies />}
+                    <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
                 </div>
             )}
 
-            {/* {step === 4 && (
-                <div>
-                {<ShowArrayPossibleReplies2 />}
-                <button onClick={handleNextStep}>Next exercice</button>
-
-                </div>
-            )} */}
-            {/* {step ===  && (
-                <div>
-                {<Exercice2 />}
-                <button onClick={handleNextStep}>Next exercice2</button>
-
-                </div>
-            )} */}
             {step === 9 && (
-                <div>
-                {<ShowExerciceResults />}
-                <button onClick={handleNextStep}>Next exercice2</button>
-
+                <div className={styles.exercice1}>
+                    {<ShowExerciceResults />}
+                    <button onClick={handleNextStep}>Next exercise2</button>
                 </div>
             )}
-            
             {step === 10 && (
+                <div className={styles.exercice2}>
+                    {<ShowArrayPossibleReplies2 />}
+                    {<ShowArrayQuestions2 />}
+                    <p></p>
+                    <button onClick={handleNextStep} disabled={buttonsDisabled}>Next</button>
+                </div>
+            )}
+
+            {step === 11 && (
+                <div className={styles.exercice1}>
+                    {<ShowExerciceResults />}
+                    <button onClick={handleNextStep}>Next exercice</button>
+                </div>
+            )}
+
+
+            {step === 12 && (
                 <div>
-                <h2>Test Finished !!</h2>
-                <button onClick={handleReboot}>Reiniciar</button>
+                    <h2>Test Finished !!</h2>
+                    <button onClick={handleReboot}>Reiniciar</button>
                 </div>
             )}
         </div>

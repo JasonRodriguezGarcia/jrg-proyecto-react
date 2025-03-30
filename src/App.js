@@ -12,7 +12,7 @@ import CookieVisitas from './components/CookieVisitas';
 import SpeechToText from './components/SpeechToText';
 import SpeechQuiz from './components/SpeechQuiz';
 import EnglishTests from './components/EnglishTest/EnglishTests'; // quitar para que funcione el MinimalistPage component
-import MinimalistPage from './pages/MinimalistPage'; // ojo puede ser interferido por css de otros componentes
+// import MinimalistPage from './pages/MinimalistPage'; // ojo puede ser interferido por css de otros componentes
 
 function App() {
   return (
@@ -39,7 +39,7 @@ function App() {
 
       <EnglishTests />
 
-      {
+      {/* {
           // https://creator.voiceflow.com/
           (function(d, t) {
               var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -56,8 +56,8 @@ function App() {
                 v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
             })(document, 'script')
             
-        }
-        <MinimalistPage />
+        } */}
+        {/* <MinimalistPage /> */}
         <CookieVisitas />
     </header>
     </>
