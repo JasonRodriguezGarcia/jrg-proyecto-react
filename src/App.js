@@ -9,17 +9,15 @@ import ProtectedRoute from './utils/ProtectedRoute';
 import ProtectedRouteAdmin from './utils/ProtectedRouteAdmin';
 import Admin from './pages/Admin';
 import CookieVisitas from './components/CookieVisitas';
-import SpeechToText from './components/SpeechToText';
-import SpeechQuiz from './components/SpeechQuiz';
-import EnglishTests from './components/EnglishTest/EnglishTests'; // quitar para que funcione el MinimalistPage component
-// import MinimalistPage from './pages/MinimalistPage'; // ojo puede ser interferido por css de otros componentes
+import Gemini from './components/Gemini/Gemini';
+import MaterialDesign from './components/Material.Design';
 
 function App() {
   return (
 
     <>
     <header>      
-      {/* <Navbar /> */}
+      <Navbar />
 
       <Routes>
         {/* <Route path="/" element={<Home />}></Route> */}
@@ -34,31 +32,12 @@ function App() {
             /> */}
 
       </Routes>
-      {/* <SpeechToText /> */}
-      {/* <SpeechQuiz /> */}
 
-      <EnglishTests />
+      {/* <Gemini /> */}
+      <MaterialDesign />
 
-      {/* {
-          // https://creator.voiceflow.com/
-          (function(d, t) {
-              var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-              v.onload = function() {
-                  window.voiceflow.chat.load({
-                      verify: { projectID: '67e6d25aa64cae9480b97496' },
-                      url: 'https://general-runtime.voiceflow.com',
-                      versionID: 'production',
-                      voice: {
-                          url: "https://runtime-api.voiceflow.com"
-                        }
-                    });
-                }
-                v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-            })(document, 'script')
-            
-        } */}
-        {/* <MinimalistPage /> */}
-        <CookieVisitas />
+
+      <CookieVisitas />
     </header>
     </>
   );

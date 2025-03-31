@@ -5,13 +5,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
+// aplicamos el theme
+import { ThemeProvider } from '@emotion/react';
+// importamos características de distintos navegadores
+// que puedan tener problemas con el "theme"
+import CssBaseline from "@mui/material/CssBaseline";
+import theme from './theme'; // importamos tema
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+   <ThemeProvider theme={theme}>
+      <CssBaseline /> 
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
