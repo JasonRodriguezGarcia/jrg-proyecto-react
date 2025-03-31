@@ -215,7 +215,9 @@ function EnglishTests() {
         return (
             <div className={styles.rightColumn}>
                 {arrayQuestions2.map ((question, index)=> 
-                    <p key={index}>
+                    <p key={index}
+                    
+                    >
                         <select name="arrayQuestions2Selected" id="arrayQuestions2Selected"
                             onChange={(event) => handleSelectArrayQuestions2SelectedChange(event, index)}
                             value = {arrayPosibleReplies2Selected[index]}
@@ -227,6 +229,7 @@ function EnglishTests() {
                 )}
             </div>
         )
+
     }
 
     const handleSelectArrayQuestions2SelectedChange = (event, index) => {
