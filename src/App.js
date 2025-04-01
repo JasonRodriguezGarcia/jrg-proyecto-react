@@ -33,8 +33,8 @@ function App() {
 
       </Routes>
 
-      {/* <Gemini /> */}
-      <MaterialDesign />
+      <Gemini />
+      {/* <MaterialDesign /> */}
 
 
       <CookieVisitas />

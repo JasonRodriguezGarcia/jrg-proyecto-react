@@ -77,6 +77,7 @@ const Gemini = ()=> {
                 <TextField label='Introduce pregunta' variant="standard"
                         id="message" name="message"
                         onChange={(e)=> setMessage(e.target.value)}
+                        sx={{width: "80%"}} // usando MUI
                         />
 
                 {isLoading && (<CircularProgress />)}
@@ -88,6 +89,7 @@ const Gemini = ()=> {
                         size="small" // tamaño
                         onClick={handleMessage}
                         endIcon={<SendIcon />}
+                        sx={{width: "20%"}} // usando MUI
                     >
                         Enviar
                     </Button>
