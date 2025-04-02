@@ -50,6 +50,6 @@ manejo de MUI de Google
 npm install @mui/material @emotion/react @emotion/styled
 npm install @fontsource/roboto
 npm install @mui/icons-material
-Además tenemos que hacer varios cambios en nuestra aplicacion en index, y otros...
+Además tenemos que hacer varios cambios en nuestra aplicacion en index, y otros... ver 31Marzo para + detalles
 
 
