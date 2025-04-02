@@ -40,3 +40,16 @@ npm install react-cookie-consent
 npm install react-cookie-consent
 
 (opcional no usado en ejercicios) llamadas fetch con funcion callback de ficheros .jsonp
+
+manejo de Gemini AI
+npm i @google/genai    (aunque en los apuntes de Che ponía @google/generative-ai, han debido hacer cambios)
+OJO necesita tener un fichero .env en el directorio principal del proyecto con el siguiente contenido con la variable de Gemini API Key
+REACT_APP_GEMINI_API_KEY=abcd   <-- donde abcd es nuestra API Key
+
+manejo de MUI de Google
+npm install @mui/material @emotion/react @emotion/styled
+npm install @fontsource/roboto
+npm install @mui/icons-material
+Además tenemos que hacer varios cambios en nuestra aplicacion en index, y otros...
+
+

@@ -1,0 +1,24 @@
+a11y.thml
+Ejercicio que trata la ACCESIBILIDAD en el que se trata:
+    - uso de "rem" y "em" para subir el tamaño el cual depende el tamaño del html por defecto o absoluto ("rem") o del padre del 
+    elemento en uso o relativo ("em").
+    - uso de "aria-label" que hace en caso de usar narrador de windows u otro reproduce el texto de este "aria-label".
+    - uso de "aria-live" que en caso de estar reproduciéndose un "aria-label" espera a que termine de reproducir una narración en 
+    curso con "polite" o interrumpa dicha reproducción con "asertive".
+    - uso del contraste de colores en un div para ver en F12, Estilos, si pulsamos en el recuadro del color purple veremos que se abre
+    una pequeña ventana en la que aparecen varias opciones, entre ellas "Relacion de contraste..." con varias líneas en la ventana
+    de colores indicando si el color cumple el AA o AAA. Moviendo el puntero del color se puede cambiar.
+    (Agregar un color al id="display" a través de element tag en STYLE panel y ver los ratios de colores y AA y AAA)
+    - Usar el atributo "alt" en las imágenes para que cuando no se carge por lo que sea se muestre al menos un texto.
+    - Permitir navegar con el teclado mediante la tecla ALT. Usar el atributo "tab-index" incluso para que los divs estén alcanzables.
+    - Uso de "rem" en "margin" de los botones para que haya mayor espacio entre ellos.
+
+/components/
+AccesibilidadFicheroInicial.html
+Fichero inicial a traducir de html a React y además hacer los cambios oportunos para que tenga ACCESIBILIDAD media o AA. Bien cambiando
+fuentes, añadiendo "arial" donde corresponda, contraste de colores, ...
+El resultado final se puede comprobar con F12 (devtools) y en la parte de abajo del todo hay una línea de opciones en la que pone 
+LIGHTHOUSE. Dicha línea hay que hacerla más grande pinchando en ella y arrastrando hacia arriba.
+Dichos cambios están realizados en el componente Navbar así como en sus páginas en /pages.
+
+
